@@ -1,0 +1,10 @@
+Once you are logged in to the FTP portal
+
+Click on the .mse file 'jenkins.msi' for installing Jenkins
+
+
+**Pls note you should be able to install the setup file without admin rights
+
+Incase you get prompted for admin rights then please Login to sx.hcl.com portal and raise Service Request in "Install Software" Category
+
+
