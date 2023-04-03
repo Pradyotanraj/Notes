@@ -1,0 +1,74 @@
+        UNIX COMMANDS
+
+1) ls and ls -a (to see the hidden files)
+-> *.ls = to check exact file like .txt or .py 
+2) pwd = present working directory 
+3) cd = current directory
+ a)cd .. to go one step back
+ b)cd root go to root
+ c) cd home or any name to go there
+
+4)mkdir raj = mkdir to create dir or folder.
+5) rm raj.txt = rm means remove the file
+  a) rm -r raj = to delete the folder.
+
+NOTE: --help 
+ By using this cmd you can know about cmd or how the cmd work.
+ex:rm --help, pwd --help.
+
+6)clear to clear the page 
+7) cat:  It reads data from the file and gives their content as output.
+ex:cat > raju.txt -> write some thing -> ctrl d( to get out).
+8) cp : copy 
+9)vi we can edit an existing file or create a new file from scratch.
+-> i insert 
+-> :wq to exit.
+
+*9)->ps = to display a list of your processes that are currently running 
+  and obtain additional information about those processes.
+   ->top(running) & kill (terminate any processer...).
+10) bg = bg is a job control command. It resumes suspended jobs in the background, 
+         returning the user to the shell prompt while the job runs.
+11) chmod = change the access mode of a file.
+ex: chmod u=r file2.txt & chmod u=w file.txt r=read w= write group:group x=exucute. 
+-> there are soo many chmod are there like  chmod 400 etc.chmod calcular is availble in google you can check it.:).
+
+12)ping = This command is mainly used for checking the network connectivity among host/server and host.
+ex:ping google.com 
+-> to close the process= ctrl c
+13) date= to check the date.
+14)whoami 
+15)uptime
+16)fingure user : it will the name of the spec user.
+17) df = it show the disk usage.
+18)du= space usage.
+19) free= how much space is there.
+20)whois= to check the who 
+21) ctrl u = to clear the line.
+         z = to stop
+         c = to halt
+         d = out from current session
+         w = delete specific word
+ 22) touch= to create a empty file
+23) head =top 10 lines in the file
+24)tail = down 10 line in the file
+25) tac = it display the content in reverse order
+26)more = same like cat but we can display the large content like scroll bar.
+27) id = display id of user/group
+28)grep = filter to search given pattern in the file content.
+29)diff = compare the differnce in the file or folder.
+30) history = review all the cmd which you have hve entered.
+31) hostname
+   -> hostname -i = show the ip address 
+32)nl = display the line number.
+33) wc=  gives number of lines, words & char avilable in the content.
+34) uniq = remove duplicate of the file content 
+35) exit = to exit the session 
+
+
+                          BYE.....:)>;:<(!...
+ 
+
+
+
+

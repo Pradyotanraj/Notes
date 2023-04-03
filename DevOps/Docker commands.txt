@@ -1,0 +1,89 @@
+Changing the mode for the file docker.sock - sudo chmod 666 /var/run/docker.sock
+
+	Jeff is not sure why sai changed the mode
+
+To view the docker images - docker images
+
+
+To view the docker container - docker ps ps(To view the docker container)
+
+
+To view more details of teh docker container - docker ps -a
+
+
+To pull an docker image -  docker pull <Image Name>
+
+sudo su
+
+root 
+
+docker pull 
+
+To run a docker image - docker run 
+
+
+To create a name for running the docker image - docker run --name Jeff -it <Image name>
+
+
+To remove a docker container  - docker rm <CONTAINER ID OR CONTAINER NAME>
+
+docker ps
+
+docker ps -a
+
+To remove a docker image  -  docker rmi <Image ID OR Image Name>
+
+
+To remove a docker image forcefully  -  docker rmi -f <Image ID OR Image Name>
+
+
+docker is portable, scaleable 
+
+
+-> tag : 1.0            note:(docker debian: Docker is a solution for the management of lightweight process containers.)
+         2.0
+
+To Create docker file and push into docker hub:
+
+--> sudo su
+
+--> docker images
+
+--> vi Dockerfile = code : FROM ubuntu'         
+                           RUN apt-get update
+                           CMD ["echo","HI"]    
+
+--> docker build .
+
+--> docker images 
+
+--> docker run -p 8082:8082 -d (images id)
+
+-->docker ps -a
+
+--> docker commit (container id)
+
+--> docker container ls 
+
+--> docker commit (container id) (docker hub file):image id
+
+-->docker login 
+
+--> docker push (container id) (docker hub file):image id
+
+
+note: 
+docker run -itd --name Raj tomcat --> zto create the container & Run
+
+docker exec -it 2e614d7b10c4 /bin/bash -- to go into the container.
+
+docker run -itd --name Raj -p 8086:8080 tomcat -->to give port number for the container to check whats in the container
+
+
+docker create file and send into docker hub.
+docker exec -it 7605b8948f8a /bin/bash 
+cat index.html
+ls
+docker commit (container id) username/reponame:image name or id {ex:docker commit 7605b8948f8a vpradyotan/my:tomcat}
+docker login 
+docker push username/repo:imagename7y

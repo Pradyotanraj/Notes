@@ -1,0 +1,17 @@
+command tomcat install :
+
+sudo yum upadate -y
+sudo su : to go root
+
+ls
+
+insatll tom :wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.67/bin/apache-tomcat-9.0.67.tar.gz
+
+ls : to check the file.
+
+to extract the tom file : tar -zvxf apache-tomcat-9.0.67.tar.gz
+to go apache file : cd apa....(tab)..
+go to bin : cd bin .
+
+start the tom: ./startup.sh 
+

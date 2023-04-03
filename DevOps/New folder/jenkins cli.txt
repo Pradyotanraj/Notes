@@ -1,0 +1,85 @@
+1. Get the Jenkins CLI client package
+
+$ wget http://jenkins/jnlpJars/jenkins-cli.jar
+
+2. Check which commands supported by the client package [Exception 1,2]
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ help
+
+3. List all jobs under the view: tools
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ list-jobs tools
+
+4. Get the configuration of the job: template
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ get-job template > template.xml
+
+5. Create a new job based on the configuration
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ create-job new_job_name < new_job_name.xml
+
+6. Run groovy script
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ groovy scripts/add_job_to_view.groovy
+
+
+
+If there are any parameters in the script, just as:
+
+
+import jenkins.model.*
+
+if (args.length != 2 ) {
+  println "Error on arguments!"
+}
+def jobName  = args[0] ?: 'a_job'
+def viewName = args[1] ?: 'a_view'
+
+println jobName + ' ' + viewName
+
+def v = Jenkins.instance.getView(viewName)
+def i = Jenkins.instance.getItemByFullName(jobName)
+if (v && i) {
+  v.add(i)
+}
+--------------------------------------------------------------------------------------------------------------
+pass the parameters as:
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ groovy scripts/add_job_to_view.groovy JOB_NAME VIEM_NAME
+
+7. Build a job
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ build new_job_name
+
+8. Diable a job
+
+$ java -jar jenkins-cli.jar -s http://jenkins/ disable-job new_job_name
+
+Exceptions:
+1. Description:
+
+Exception in thread "main" java.io.IOException: No X-Jenkins-CLI2-Port among [null, Vary, Date, Content-Length, Keep-Alive, Set-Cookie, Connection, Content-Type, X-Powered-By, Server]
+  at hudson.cli.CLI.getCliTcpPort(CLI.java:281)
+  at hudson.cli.CLI.<init>(CLI.java:128)
+  at hudson.cli.CLIConnectionFactory.connect(CLIConnectionFactory.java:72)
+  at hudson.cli.CLI._main(CLI.java:449)
+  at hudson.cli.CLI.main(CLI.java:378)
+  Suppressed: java.io.EOFException: unexpected stream termination
+      at hudson.remoting.ClassicCommandTransport.create(ClassicCommandTransport.java:100)
+      at hudson.remoting.Channel.<init>(Channel.java:392)
+      at hudson.remoting.Channel.<init>(Channel.java:388)
+      at hudson.remoting.Channel.<init>(Channel.java:349)
+      at hudson.remoting.Channel.<init>(Channel.java:345)
+      at hudson.remoting.Channel.<init>(Channel.java:333)
+      at hudson.cli.CLI.connectViaHttp(CLI.java:159)
+      at hudson.cli.CLI.<init>(CLI.java:132)
+      ... 3 more
+
+------------------------------------------------------------------
+
+Solution: check the port which Jenkins is running on, put 8080 on URL should fix, just as:
+
+$ java -jar jenkins-cli.jar -s http://jenkins:8080/ help
+
+
+web link : https://lifuzu.com/blog/2014/04/24/playing-with-jenkins-create-job/

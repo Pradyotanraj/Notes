@@ -1,0 +1,110 @@
+Note : Use all these commands in aws cloudshell or in Putty client
+       
+       Not for other os(Operating System)
+
+
+
+update all packages : sudo yum update
+
+
+Adding jenkins repo : sudo wget -O /etc/yum.repos.d/jenkins.repo \https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+
+Importing key file from jenkins : sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+
+To upgrade : sudo yum upgrade
+
+
+To install java : sudo amazon-linux-extras install java-openjdk11 -y
+
+
+To install jenkins : sudo yum install jenkins -y
+
+
+To enable jenkins service : sudo systemctl enable jenkins
+
+
+To start jenkins service : sudo systemctl start jenkins
+
+
+To check jenkins service status : sudo systemctl status jenkins
+
+first check the docker is installed? (docker help)
+
+load or update the packages : sudo yum upade -y 
+
+To install the docker: sudo yum install docker -y
+
+To enable docker service : sudo systemctl enable docker
+
+
+To start docker service : sudo systemctl start docker
+
+
+To check docker service status : sudo systemctl status docker
+
+-> ? sudo usermod -a -G docker ec2-user -->?
+
+To check Docker image : docker image.
+
+To list the  docker running containers: docker ps => list container
+
+To check all the containers : docker ps -a 
+
+
+
+commands to use dockers:
+GIT:
+git init =  (to create your file into repo)
+git clone = link to clone rep from github to local.
+git checkout -b = to crate a branch.
+git branch = to check the branch
+git checkout sample = to go into the file.        local
+git add .=" . " to send all files to branch        |
+git commit -m "test file created"= to commit      stage
+ copy paste link                                    |
+                                                  commit
+  global 
+  user name 
+token or pass
+                                                  |
+                                                  git repo
+git push --set-upstream origin(name)
+
+----------------------------------------------------------------
+git config --global user.name "Pradyotanraj"
+git config --global user.email "veenapradyotan07@gmail.com"
+ls
+mkdir ktpractice
+git init
+ls -lart
+git add .
+git commit -m "thsi is practice filr"
+git branch 
+git remote add origin https://github.com/Pradyotanraj/kt.gitz
+git push -u origin master
+git log 
+git log --oneline
+
+https://github.com/Pradyotanraj/kt.git
+
+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
+-----------------------------------------------------------------
+
+jenkins in app
+
+freestyle 
+
+dec(..)
+
+parameters : dev, qa,uit,prod
+
+git: 
+
+
+build step (windows batch cmd) : in command = mvn clean install package
+
+again build step: we use war file for that:
+  
+deploy war/ear container: **/*.war
